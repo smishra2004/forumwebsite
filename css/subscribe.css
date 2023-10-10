@@ -1,0 +1,204 @@
+main{
+    background-color: var(--whiteColor);
+}
+
+main .container > h3{
+    margin: 2rem auto;
+    max-width: 58rem;
+    width: 100%;
+    font-size: 2.7rem;
+    font-weight: 400;
+    line-height: 122%;
+    text-align: center;
+}
+
+main .subscribe .container .row{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-top: 1.5rem;
+    gap: 1.5rem;
+}
+
+main .subscribe .container .row .box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    min-width: 19rem;
+    max-width: 55rem;
+    width: 100%;
+    padding: 1.5rem;
+    border: 0.1rem solid var(--darkGrayColor);
+    border-radius: 0.5rem;
+    border-top-width: 0.5rem;
+}
+
+main .subscribe .container .row .box:last-child{
+    border-color: var(--darkRedColor);
+}
+
+main .subscribe .container .row .box:last-child h2{
+    color:var(--darkRedColor);
+}
+
+main .subscribe .container .row .box .btn{
+    width: 100%;
+}
+
+main .subscribe .container .row .box .free{
+    font-weight: 500;
+    font-size: var(--fs18);
+    line-height: 150%;
+    letter-spacing: -0.02em;
+    min-height:7.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+main .subscribe .container .row .box .prices{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    font-weight: 700;
+    min-height: 7.5rem;
+}
+
+main .subscribe .container .row .box .prices ul{
+    display: flex;
+    align-items: center;
+    background-color: #e3e7e9;
+    border-radius: 0.7rem;
+    padding: 0.2rem 0.4rem;
+    gap: 1rem;
+}
+
+main .subscribe .container .row .box .prices ul li{
+    flex: auto;
+    pad: 0.5rem;
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+main .subscribe .container .row .box .prices ul li.active{
+    background-color: var(--whiteColor);
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+main .subscribe .container .row .box .prices ul li:hover{
+    background-color: var(--lightWhiteColor);
+    opacity: 0.9;
+}
+
+main .subscribe .container .row .box .prices ul li span{
+    color: var(--darkRedColor);
+    font-weight: 300;
+}
+
+main .container .row .box .yearly{
+    display: none;
+}
+
+main .container .row .box .monthly{
+    display: none;
+}
+
+main .container .row .box .yearly .active{
+    display: block;
+}
+
+main .container .row .box .monthly .active{
+    display: block;
+}
+
+main .container .row .box .prices .yearly s{
+    color: var(--darkGrayColor);
+}
+
+main .container .row .box .price{
+    font-size: var(--fs18);
+    font-weight: 500;
+    line-height: 150%;
+    letter-spacing: -0.02em;
+    color: var(--lightBlackColor);
+}
+
+main .container .row .box .priviliges{
+    color: var(--lightBlackColor);
+}
+
+main .container .row .box .priviliges li{
+    color: var(--darkGrayColor);
+    margin-right: 1rem;
+}
+
+/* faqs section */
+.faqs .container .row{
+    margin: 4rem auto;
+    max-width: 96rem;
+}
+
+.faqs .container .row h2{
+    font-weight: 700;
+    font-size: var(--fs24);
+    letter-spacing: -0.02em;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.faqs .container .row .faq{
+    border-bottom: 0.1rem solid #e3e7e9;
+    transition: var(--transition);
+}
+
+.faqs .container .row .faq:hover{
+    background-color: var(--lightWhiteColor);
+}
+
+.faqs .container .row .faq .question{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0.75rem;
+    margin-bottom: 1rem;
+    cursor:pointer;
+    transition: var(--transition);
+}
+
+.faqs .container .row .faq .active .question{
+    background-color: var(--lightWhiteColor);
+}
+
+.faqs .container .row .faq .question h3{
+    font-weight: 500;
+    font-size: 1.5rem;
+}
+
+.faqs .container .row .faq .question i{
+    transition: var(--transition);
+}
+
+.faqs .container .row .faq .active .question i{
+    transform: rotate(180deg);
+}
+
+.faqs .container .row .faq .answer p{
+    margin: 0 0 1rem 1rem;
+}
+
+.faqs .container .row .faq .answer{
+    visibility:hidden;
+    opacity: 0;
+    height: 0;
+    transition: var(--transition);
+}
+
+.faqs .container .row .faq .active .answer{
+    visibility: visible;
+    opacity: 1;
+    height: 100%;
+} 
