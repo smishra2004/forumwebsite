@@ -103,3 +103,61 @@ function addFeedback(item){
     // insert feedback into the list
     commentsCont.insertAdjacentElement('beforeend', div)
 }
+
+
+// firebase..................................................................
+{/* <script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-app.js";
+</script> 
+const firebaseConfig = {
+    apiKey: "AIzaSyAD9H8gQgJI622z6AWfJObkRfX6dPji3ME",
+    authDomain: "database-149e4.firebaseapp.com",
+    databaseURL: "https://database-149e4-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "database-149e4",
+    storageBucket: "database-149e4.appspot.com",
+    messagingSenderId: "485573327691",
+    appId: "1:485573327691:web:3a8fa45d9518a34e03c6ce"
+  };
+
+  // initialize firebase
+  firebase.initializeApp(firebaseConfig);
+
+  // reference your database
+  var commentFormDB =firebase.database().ref('commentForm');
+
+  document.getElementById("commentForm").addEventListener("submit",submitForm)
+
+  function submitForm(e) {
+    e.preventDefault();
+  
+    var user = getElementVal("user");
+    var comment = getElementVal("comment");
+    // var msgContent = getElementVal("msgContent");
+   
+    saveMessages(user,comment);
+  
+    //   enable alert
+    document.querySelector(".alert").style.display = "block";
+  
+    //   remove the alert
+    setTimeout(() => {
+      document.querySelector(".alert").style.display = "none";
+    }, 3000);
+  
+    //   reset the form
+    document.getElementById("commentForm").reset();
+  }
+  
+  const saveMessages = (user,comment) => {
+    var newContactForm = commentFormDB.push();
+  
+    newCommentForm.set({
+      user: user,
+      comment: comment,
+      
+    });
+  };
+  
+  const getElementVal = (id) => {
+    return document.getElementById(id).value;
+  }; */}

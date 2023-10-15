@@ -18,7 +18,7 @@ body{
 
 .container .top{
     position: relative;
-    border-bottom: 1px solid #eee;
+    /* border-bottom: 1px solid #eee; */
 }
 
 /* .top .likes_count{
@@ -68,7 +68,7 @@ form{
 }
 
 .top .heart_icon{
-    color: #ffadad;
+    color:#a52e2d;
     font-size: 30px;
     cursor: pointer;
 }

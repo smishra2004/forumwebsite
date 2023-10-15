@@ -11,6 +11,78 @@
     <title>Document</title>
 </head>
 <body>
+    <!-- <button id="signInButton">Create Account / Sign In</button>
+    <button id="signOutButton">Sign Out</button>
+
+    <div id="message">
+        <p>You have signed in  as <span id="userName"></span> with the email <span id="userEmail"></span> </p>
+    </div> -->
+
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js";
+        import { getAuth, GoogleAuthProvider, signInWithPopup, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+          apiKey: "AIzaSyDSI3wAjGrauQ4Dmjjs4-_i9Eu2Q0fLJ6k",
+          authDomain: "auth-bb7ff.firebaseapp.com",
+          projectId: "auth-bb7ff",
+          storageBucket: "auth-bb7ff.appspot.com",
+          messagingSenderId: "180990538953",
+          appId: "1:180990538953:web:34d72c1ad6e8103e3ac918"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth();
+        const provider = new GoogleAuthProvider();
+
+        const signInButton = document.getElementById("signInButton");
+        const signOutButton = document.getElementById("signOutButton");
+        const message = document.getElementById("message");
+        const userName = document.getElementById("userName");
+        const userEmail = document.getElementById("userEmail");
+
+        signOutButton.style.display = "none";
+        message.style.display = "none";
+
+  const userSignIn = async() => {
+    signInWithPopup(auth, provider)
+    .then((result) => {
+        const user = result.user
+        console.log(user);
+    }).catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message
+    })
+  }
+
+  const userSignOut = async() => {
+    signOut(auth).then(() => {
+        alert("You have signed out successfully!");
+    }).catch((error) => {})
+  }
+
+  onAuthStateChanged(auth, (user) => {
+    if(user) {
+        alert("you have signed in!!")
+      signOutButton.style.display = "block";
+      message.style.display = "block";
+      userName.innerHTML = user.displayName;
+      userEmail.innerHTML = user.email
+    } else {
+      signOutButton.style.display = "none";
+      message.style.display = "none";
+    }
+  })
+
+  signInButton.addEventListener('click', userSignIn);
+  signOutButton.addEventListener('click', userSignOut);
+
+    </script>
     <header class="header" id="header">
         <div class="row">
             <div class="container">
@@ -24,6 +96,13 @@
                             <input type="text" placeholder="Search Community">
                             <i class="fa-solid fa-magnifying-glass"></i>
                         </div>
+                        <!-- <button id="signInButton">Create Account / Sign In</button>
+                        <button id="signOutButton">Sign Out</button>
+
+                        <div id="message">
+                        <p>You have signed in  as <span id="userName"></span> with the email <span id="userEmail"></span> </p>
+                        </div> -->
+
                     </div>
                     <div class="nav-group">
                         <ul>
@@ -37,6 +116,13 @@
                             </li>
                             <li><a href="#"><i class="fa-solid fa-ellipsis-vertical"></i></a></li>
                         </ul>
+                        <!-- <button id="signInButton">Create Account / Sign In</button>
+                        <button id="signOutButton">Sign Out</button>
+
+                        <div id="message">
+                        <p>You have signed in  as <span id="userName"></span> with the email <span id="userEmail"></span> </p>
+                        </div> -->
+
                     </div>
                     </div>
                 </div>
@@ -71,7 +157,107 @@
                         </div>
                         <div class="box">
                             <div class="img">
-                                <img src="https://www.hondashadow.net/d2/avatars/o/304/304065.jpg?1689706971" alt="">
+                                <img src="https://images.unsplash.com/photo-1570306296747-f7bb428e4fe0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1780&q=80" alt="">
+                            </div>
+                            <div class="details">
+                                <p>technical discussion</p>
+                                <a href="posts.html"><h3>93 shadow vt1100c</h3></a>
+                                <div class="sub-details">
+                                    <span>jason.aalbers95.</span>
+                                    <span>9 h ago</span>
+                                    <span>jason.aalbers95.</span>
+                                    <span>replied</span>
+                                    <span>5 h ago</span>
+                                    <div class="comment">
+                                        <i class="fa-solid fa-comment"></i>
+                                        <span>6</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="img">
+                                <img src="https://images.unsplash.com/photo-1558981285-6f0c94958bb6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="">
+                            </div>
+                            <div class="details">
+                                <p>technical discussion</p>
+                                <a href="posts.html"><h3>93 shadow vt1100c</h3></a>
+                                <div class="sub-details">
+                                    <span>jason.aalbers95.</span>
+                                    <span>9 h ago</span>
+                                    <span>jason.aalbers95.</span>
+                                    <span>replied</span>
+                                    <span>5 h ago</span>
+                                    <div class="comment">
+                                        <i class="fa-solid fa-comment"></i>
+                                        <span>6</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="img">
+                                <img src="https://images.unsplash.com/photo-1622547918989-02ebc7a89eb0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="">
+                            </div>
+                            <div class="details">
+                                <p>technical discussion</p>
+                                <a href="posts.html"><h3>93 shadow vt1100c</h3></a>
+                                <div class="sub-details">
+                                    <span>jason.aalbers95.</span>
+                                    <span>9 h ago</span>
+                                    <span>jason.aalbers95.</span>
+                                    <span>replied</span>
+                                    <span>5 h ago</span>
+                                    <div class="comment">
+                                        <i class="fa-solid fa-comment"></i>
+                                        <span>6</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="img">
+                                <img src="https://images.unsplash.com/photo-1570306296747-f7bb428e4fe0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1780&q=80" alt="">
+                            </div>
+                            <div class="details">
+                                <p>technical discussion</p>
+                                <a href="posts.html"><h3>93 shadow vt1100c</h3></a>
+                                <div class="sub-details">
+                                    <span>jason.aalbers95.</span>
+                                    <span>9 h ago</span>
+                                    <span>jason.aalbers95.</span>
+                                    <span>replied</span>
+                                    <span>5 h ago</span>
+                                    <div class="comment">
+                                        <i class="fa-solid fa-comment"></i>
+                                        <span>6</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="img">
+                                <img src="https://images.unsplash.com/photo-1558981285-6f0c94958bb6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="">
+                            </div>
+                            <div class="details">
+                                <p>technical discussion</p>
+                                <a href="posts.html"><h3>93 shadow vt1100c</h3></a>
+                                <div class="sub-details">
+                                    <span>jason.aalbers95.</span>
+                                    <span>9 h ago</span>
+                                    <span>jason.aalbers95.</span>
+                                    <span>replied</span>
+                                    <span>5 h ago</span>
+                                    <div class="comment">
+                                        <i class="fa-solid fa-comment"></i>
+                                        <span>6</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="img">
+                                <img src="https://images.unsplash.com/photo-1622547918989-02ebc7a89eb0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="">
                             </div>
                             <div class="details">
                                 <p>technical discussion</p>
@@ -111,107 +297,7 @@
                         </div>
                         <div class="box">
                             <div class="img">
-                                <img src="https://www.hondashadow.net/d2/avatars/o/304/304065.jpg?1689706971" alt="">
-                            </div>
-                            <div class="details">
-                                <p>technical discussion</p>
-                                <a href="posts.html"><h3>93 shadow vt1100c</h3></a>
-                                <div class="sub-details">
-                                    <span>jason.aalbers95.</span>
-                                    <span>9 h ago</span>
-                                    <span>jason.aalbers95.</span>
-                                    <span>replied</span>
-                                    <span>5 h ago</span>
-                                    <div class="comment">
-                                        <i class="fa-solid fa-comment"></i>
-                                        <span>6</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="box">
-                            <div class="img">
-                                <img src="https://www.hondashadow.net/d2/avatars/o/304/304065.jpg?1689706971" alt="">
-                            </div>
-                            <div class="details">
-                                <p>technical discussion</p>
-                                <a href="posts.html"><h3>93 shadow vt1100c</h3></a>
-                                <div class="sub-details">
-                                    <span>jason.aalbers95.</span>
-                                    <span>9 h ago</span>
-                                    <span>jason.aalbers95.</span>
-                                    <span>replied</span>
-                                    <span>5 h ago</span>
-                                    <div class="comment">
-                                        <i class="fa-solid fa-comment"></i>
-                                        <span>6</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="box">
-                            <div class="img">
-                                <img src="https://www.hondashadow.net/d2/avatars/o/304/304065.jpg?1689706971" alt="">
-                            </div>
-                            <div class="details">
-                                <p>technical discussion</p>
-                                <a href="posts.html"><h3>93 shadow vt1100c</h3></a>
-                                <div class="sub-details">
-                                    <span>jason.aalbers95.</span>
-                                    <span>9 h ago</span>
-                                    <span>jason.aalbers95.</span>
-                                    <span>replied</span>
-                                    <span>5 h ago</span>
-                                    <div class="comment">
-                                        <i class="fa-solid fa-comment"></i>
-                                        <span>6</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="box">
-                            <div class="img">
-                                <img src="https://www.hondashadow.net/d2/avatars/o/304/304065.jpg?1689706971" alt="">
-                            </div>
-                            <div class="details">
-                                <p>technical discussion</p>
-                                <a href="posts.html"><h3>93 shadow vt1100c</h3></a>
-                                <div class="sub-details">
-                                    <span>jason.aalbers95.</span>
-                                    <span>9 h ago</span>
-                                    <span>jason.aalbers95.</span>
-                                    <span>replied</span>
-                                    <span>5 h ago</span>
-                                    <div class="comment">
-                                        <i class="fa-solid fa-comment"></i>
-                                        <span>6</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="box">
-                            <div class="img">
-                                <img src="https://www.hondashadow.net/d2/avatars/o/304/304065.jpg?1689706971" alt="">
-                            </div>
-                            <div class="details">
-                                <p>technical discussion</p>
-                                <a href="posts.html"><h3>93 shadow vt1100c</h3></a>
-                                <div class="sub-details">
-                                    <span>jason.aalbers95.</span>
-                                    <span>9 h ago</span>
-                                    <span>jason.aalbers95.</span>
-                                    <span>replied</span>
-                                    <span>5 h ago</span>
-                                    <div class="comment">
-                                        <i class="fa-solid fa-comment"></i>
-                                        <span>6</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="box">
-                            <div class="img">
-                                <img src="https://www.hondashadow.net/d2/avatars/o/304/304065.jpg?1689706971" alt="">
+                                <img src="https://images.unsplash.com/photo-1570306296747-f7bb428e4fe0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1780&q=80" alt="">
                             </div>
                             <div class="details">
                                 <p>technical discussion</p>
@@ -254,7 +340,13 @@
                             <a href="" class="btn btn-white">
                                 <i class="fa-solid fa-store"></i>grow your business
                             </a>
-                        </div>
+                            <button id="signInButton">Sign In with Google</button>
+                            <button id="signOutButton">Sign Out</button>
+
+                            <div id="message">
+                            <p>You have signed in  as <span id="userName"></span> with the email <span id="userEmail"></span> </p>
+                            </div>
+                            </div>
                     </div>
                     <div class="box top-forums">
                         <h3>our top forums</h3>

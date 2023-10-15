@@ -15,6 +15,32 @@
     <title>Document</title>
 </head>
 <body>
+    <!-- <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-app.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+          apiKey: "AIzaSyAD9H8gQgJI622z6AWfJObkRfX6dPji3ME",
+          authDomain: "database-149e4.firebaseapp.com",
+          projectId: "database-149e4",
+          storageBucket: "database-149e4.appspot.com",
+          messagingSenderId: "485573327691",
+          appId: "1:485573327691:web:3a8fa45d9518a34e03c6ce"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+
+        function writeData(){
+            firebase.database().ref("User").set({
+                username: document.getElementById("user").value,
+                comment: document.getElementById("comment").value
+            });
+        }
+      </script> -->
     <header class="header" id="header">
         <div class="row">
             <div class="container">
@@ -62,13 +88,69 @@
 	</div>
 </body>
 <body>
+    <!-- firebase -->
+    <!-- <script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-app.js";
+const firebaseConfig = {
+    apiKey: "AIzaSyAD9H8gQgJI622z6AWfJObkRfX6dPji3ME",
+    authDomain: "database-149e4.firebaseapp.com",
+    databaseURL: "https://database-149e4-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "database-149e4",
+    storageBucket: "database-149e4.appspot.com",
+    messagingSenderId: "485573327691",
+    appId: "1:485573327691:web:3a8fa45d9518a34e03c6ce"
+  };
+
+  // initialize firebase
+  firebase.initializeApp(firebaseConfig);
+
+  // reference your database
+  var commentFormDB =firebase.database().ref('commentForm');
+
+  document.getElementById("commentForm").addEventListener("submit",submitForm)
+
+  function submitForm(e) {
+    e.preventDefault();
+  
+    var user = getElementVal("user");
+    var comment = getElementVal("comment");
+    // var msgContent = getElementVal("msgContent");
+   
+    saveMessages(user,comment);
+  
+    //   enable alert
+    document.querySelector(".alert").style.display = "block";
+  
+    //   remove the alert
+    setTimeout(() => {
+      document.querySelector(".alert").style.display = "none";
+    }, 3000);
+  
+    //   reset the form
+    document.getElementById("commentForm").reset();
+  }
+  
+  const saveMessages = (user,comment) => {
+    var newContactForm = commentFormDB.push();
+  
+    newCommentForm.set({
+      user: user,
+      comment: comment,
+      
+    });
+  };
+  
+  const getElementVal = (id) => {
+    return document.getElementById(id).value;
+  };
+</script> -->
     <div class="container center_display">
         <div class="top">
             <div class="video_container">
                 <!-- <video width="800" height="450" controls>
                     <source src="">
                 </video> -->
-                <form>
+                <form action="" id="commentForm">
                     <div class="heart_icon center_display">
                         <i class="far fa-heart"></i>
                     </div>
@@ -109,5 +191,6 @@
         </div>
     </div>
     <script src="https://kit.fontawesome.com/ddc8c10e95.js" crossorigin="anonymous"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script> -->
 </body>
 </html>

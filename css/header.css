@@ -102,6 +102,32 @@
     display: none;
 }
 
+
+#signInButton{
+  background-color:#a52e2d; 
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 1.5rem;
+}
+
+#signOutButton{
+    background-color:#a52e2d; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 1.5rem;
+  }
+
+
 @media(min-width: 768px){
     .header{
         height: 18rem;
